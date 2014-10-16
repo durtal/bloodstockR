@@ -7,6 +7,7 @@ R package with variety of datasets from Thoroughbred Bloodstock Sales, at the ti
 Only Tattersalls sales are in the package at the moment, hopefully others will be added in time (sales from Goffs etc.)
 
 ##### Tattersalls sales
+Data was sourced from [Tattersalls](http://db.tattersalls.com/4DCGI/Entry/Index)
 Name | Sales included | Dim
 -----|----------------|-----
 tatts_2010 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas, craven, feb</sub> | 8346 rows, 12 cols
