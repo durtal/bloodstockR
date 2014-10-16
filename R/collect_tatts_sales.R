@@ -56,6 +56,7 @@ collect_tatts_sales <- function(url, sale_name = "NULL") {
 # helper function to collect pedigree data
 extract_pedigree <- function(pedigrees) {
     # vector to check if any unnamed horses are in the sale
+    pedigrees <- tolower(pedigrees)
     unnamed <- grepl(" / ", pedigrees)
     
     # extract sires and dams of named horses
@@ -76,7 +77,7 @@ extract_pedigree <- function(pedigrees) {
         dam[unnamed] <- unnamed_dam
     }
     
-    dam <- stringr::str_replace(dam, " Update", "")
+    dam <- stringr::str_replace(dam, " update", "")
     dam <-stringr::str_trim(dam, side = "both")
     sire <-stringr::str_trim(sire, side = "both")
     color <-stringr::str_extract(pedigrees, "[[:alpha:]]+\\.[[:alpha:]]+\\.")
@@ -99,14 +100,15 @@ extract_pedigree <- function(pedigrees) {
 # helper function to collect seller data
 extract_seller <- function(buyers) {
     buyers <- iconv(buyers, "latin1", "ASCII", "")
+    buyers <- tolower(buyers)
     
-    purchaser <-stringr::str_extract(buyers, " ?Purchaser:? ?(.*)")
+    purchaser <-stringr::str_extract(buyers, " ?purchaser:? ?(.*)")
     
-    consignor <- stringr::str_replace(buyers, purchaser, "")
-    consignor <- stringr::str_replace(consignor, "Consignor:? ?", "")
+    consignor <- stringr::str_extract(buyers, "consignor:? (.*) ?purchaser:?")
+    consignor <- stringr::str_replace_all(consignor, "consignor:? ?|purchaser:?", "")
     consignor <-stringr::str_trim(consignor, side="both")
     
-    purchaser <- stringr::str_replace(purchaser, "Purchaser: ?", "")
+    purchaser <- stringr::str_replace(purchaser, "purchaser: ?", "")
     purchaser <-stringr::str_trim(purchaser, side="both")
     
     buyer_df <- data.frame(seller=tolower(consignor), 
