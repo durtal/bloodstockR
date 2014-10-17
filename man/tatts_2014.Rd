@@ -3,14 +3,13 @@
 \name{tatts_2014}
 \alias{tatts_2014}
 \title{Tattersalls Sales in 2014}
-\format{2174 rows, 12 columns}
+\format{1469 rows, 12 columns}
 \description{
-2174 rows, 12 columns
+Dataset of 5 Tattersalls sales in 2014
 }
 \section{tatts_2014}{
 
 \itemize{
-     \item \strong{sept_2014} September 2014 Sale
      \item \strong{july_2014} July 2014 Sale
      \item \strong{guineas_hit_2014} Guineas Horses in Training 2014 Sale
      \item \strong{guineas_2014} Guineas 2014 Sale

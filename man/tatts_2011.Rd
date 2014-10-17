@@ -5,7 +5,7 @@
 \title{Tattersalls Sales in 2011}
 \format{7488 rows, 12 columns}
 \description{
-7488 rows, 12 columns
+Dataset of 13 Tattersalls sales in 2011
 }
 \section{tatts_2011}{
 
