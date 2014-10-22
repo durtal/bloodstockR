@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>collect_tatts_sales</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="libs/bootstrap-2.3.2/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-2.3.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+@media (min-width: 980px) {
+  .section h2 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+  .section h3 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+}
+
+p{
+  font-size: 13px;
+}
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+/* some padding for disqus */
+#disqus_thread {
+  margin-top: 45px;
+}
+
+</style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="container-fluid main-container">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<button class="btn btn-navbar" type="button" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="http://durtal.github.io" class="brand">return to RcappeR</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li>
+						<a href="index.html">rBloodstock Home</a>
+					</li>
+					<li class="dropdown">
+						<a href="Datasets" class="dropdown-toggle" data-toggle="dropdown">
+							Datasets <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="tattersalls.html">Tattersalls</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="functions" class="dropdown-toggle" data-toggle="dropdown">
+							Functions <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="collect_tatts_sales.html">collect_tatts_sales</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="header">
+<h1 class="title">collect_tatts_sales</h1>
+</div>
+
+
+<p>The 5 Tattersalls datasets might not contain data for the sale you would like, so I have included a function to collect new data from the <a href="http://db.tattersalls.com/4DCGI/Entry/Index">Tattersalls</a> site. The function is a little crude, but the format of data appears to be in the same format for each sale, so hopefully it will work as desired (if you encounter issues let me know). Sales can be chosen from the dropdown menu <a href="http://db.tattersalls.com/4DCGI/Entry/MenuResults">on this page</a>.</p>
+<div id="usage" class="section level4">
+<h4>Usage</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">collect_tatts_sales</span>(url, <span class="dt">sale_name =</span> <span class="st">&quot;&quot;</span>)</code></pre>
+</div>
+<div id="arguments" class="section level4">
+<h4>Arguments</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">param</th>
+<th align="left">details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">url</td>
+<td align="left">the url of the sale</td>
+</tr>
+<tr class="even">
+<td align="left">sale_name</td>
+<td align="left">optional, name of the sale, useful to include if combining with other datasets</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example-use" class="section level4">
+<h4>Example Use</h4>
+<p>Collect data for “October 2003 Book 1”, the url <em>“<a href="http://db.tattersalls.com/4DCGI/Entry/List?30%096%09=%20OC1%2003%09by8">http://db.tattersalls.com/4DCGI/Entry/List?30%096%09=%20OC1%2003%09by8</a>”</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">oct_bk1 &lt;-<span class="st"> </span><span class="kw">collect_tatts_sales</span>(<span class="dt">url =</span> <span class="st">&quot;http://db.tattersalls.com/4DCGI/Entry/List?30%096%09=%20OC1%2003%09by8&quot;</span>,
+                               <span class="dt">sale_name =</span> <span class="st">&quot;oct_bk1&quot;</span>)</code></pre>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>

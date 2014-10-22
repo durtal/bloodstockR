@@ -1,0 +1,95 @@
+---
+title: "Tattersalls"
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(rBloodstock)
+```
+There are currently (as of 22/10/14) 5 datasets with Tattersalls sales data, these are:
+
+Name | Sales included | Dim
+-----|----------------|-----
+tatts_2010 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas, craven, feb</sub> | 8346 rows, 12 cols
+tatts_2011 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, breeze_up, craven, feb</sub> | 7488 rows, 12 cols
+tatts_2012 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 7739 rows, 12 cols
+tatts_2013 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 8867 rows, 12 cols
+tatts_2014 | <sub>sept, july, guineas_hit, guineas, craven, feb</sub> | 2174 rows, 12 cols
+
+There is a function to collect data from sales not included in the package, see [here](collect_tatts_sales.html).
+
+To load a dataset:
+```{r}
+data(tatts_2010)
+```
+
+Each of the 5 datasets have the same 12 variables, ``r names(tatts_2010)``, as can be seen in the table above, the same sales take place each year.  
+
+### Some Analysis
+
+It is easy to combine the 5 datasets, such as:
+```{r}
+data(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+
+# combine all 5 datasets into one large dataset
+tattersalls <- rbind(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+# clean workspace
+rm(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+```
+
+The new `tattersalls` dataset has `r dim(tattersalls)[1]` rows and `r dim(tattersalls)[2]` columns, the `sale_name` variable can serve as an individual sale (so it includes the year of the sale, eg. **`r head(tattersalls$sale_name, 1)`**), while the `sale` variable will match across multiple years.
+
+Loading other libraries `dplyr` and `ggplot2` we can quickly analyse data:
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+The average price of lots in each sale across multiple years:
+
+```{r fig.align='center', fig.height=5, fig.width=7}
+sale_summaries <- tattersalls %>%
+    group_by(sale, year) %>%
+    summarise(n = n(),
+              mean = mean(price, na.rm=T))
+
+ggplot(sale_summaries, aes(x=year, y=mean)) +
+    geom_bar(stat="identity", fill="#D9220F") +
+    theme_bw() +
+    theme(text = element_text(size=10)) +
+    facet_wrap(~sale)
+```
+
+One thing stands out immediately from the plots above, don't go to October Book 1 unless you have deep pockets, the average price of lots has doubled from 96,001 Guineas in 2010 to 188,068 Guineas in 2013 (2014 isn't included in the `tatts_2014` dataset yet).  The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be very consistent.
+
+We can also find the 20 sires with the highest average price over the 5 years:
+
+```{r}
+tattersalls %>%
+    group_by(sire) %>%
+    summarise(n = n(),
+              mean = mean(price, na.rm=T),
+              sd = sd(price, na.rm=T),
+              min = min(price, na.rm=T),
+              max = max(price, na.rm=T)) %>%
+    filter(n >= 50) %>%
+    arrange(desc(mean)) %>%
+    head(20)
+```
+
+**Sea The Stars** is top of the list, his progeny costing a cool 212,922 Guineas on average, Galileo is a close second, with a large gap down to Danehill.  Perhaps more interesting than Sea The Stars topping Galileo is the *standard deviation* of their prices, Sea The Stars with a much smaller **sd** perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren't quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.
+
+It's also possible to look at the buyers or agents with the highest average price paid over the 5years.
+```{r}
+tattersalls %>%
+    group_by(buyer) %>%
+    summarise(n = n(),
+              mean = mean(price, na.rm=T),
+              sd = sd(price, na.rm=T),
+              min = min(price, na.rm=T),
+              max = max(price, na.rm=T)) %>%
+    filter(n >= 50) %>%
+    arrange(desc(mean)) %>%
+    head(20)
+```
+
+Demi O'Byrne (an agent associated with Coolmore) isn't as active as others in the top 5, with just 50 purchases, but the average price he pays is almost double that of John Ferguson (links with Godolphin).

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Tattersalls</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="libs/bootstrap-2.3.2/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-2.3.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+@media (min-width: 980px) {
+  .section h2 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+  .section h3 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+}
+
+p{
+  font-size: 13px;
+}
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+/* some padding for disqus */
+#disqus_thread {
+  margin-top: 45px;
+}
+
+</style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="container-fluid main-container">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<button class="btn btn-navbar" type="button" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="http://durtal.github.io" class="brand">return to RcappeR</a>
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li>
+						<a href="index.html">rBloodstock Home</a>
+					</li>
+					<li class="dropdown">
+						<a href="Datasets" class="dropdown-toggle" data-toggle="dropdown">
+							Datasets <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="tattersalls.html">Tattersalls</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="functions" class="dropdown-toggle" data-toggle="dropdown">
+							Functions <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="collect_tatts_sales.html">collect_tatts_sales</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="header">
+<h1 class="title">Tattersalls</h1>
+</div>
+
+
+<p>There are currently (as of 22/10/14) 5 datasets with Tattersalls sales data, these are:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Sales included</th>
+<th align="left">Dim</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tatts_2010</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas, craven, feb</sub></td>
+<td align="left">8346 rows, 12 cols</td>
+</tr>
+<tr class="even">
+<td align="left">tatts_2011</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, breeze_up, craven, feb</sub></td>
+<td align="left">7488 rows, 12 cols</td>
+</tr>
+<tr class="odd">
+<td align="left">tatts_2012</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">7739 rows, 12 cols</td>
+</tr>
+<tr class="even">
+<td align="left">tatts_2013</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">8867 rows, 12 cols</td>
+</tr>
+<tr class="odd">
+<td align="left">tatts_2014</td>
+<td align="left"><sub>sept, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">2174 rows, 12 cols</td>
+</tr>
+</tbody>
+</table>
+<p>There is a function to collect data from sales not included in the package, see <a href="collect_tatts_sales.html">here</a>.</p>
+<p>To load a dataset:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(tatts_2010)</code></pre>
+<p>Each of the 5 datasets have the same 12 variables, <code>year, sale, sale_name, lot_no, horse, sex, color, sire, dam, seller, buyer, price</code>, as can be seen in the table above, the same sales take place each year.</p>
+<div id="some-analysis" class="section level3">
+<h3>Some Analysis</h3>
+<p>It is easy to combine the 5 datasets, such as:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+
+<span class="co"># combine all 5 datasets into one large dataset</span>
+tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+<span class="co"># clean workspace</span>
+<span class="kw">rm</span>(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)</code></pre>
+<p>The new <code>tattersalls</code> dataset has 31716 rows and 12 columns, the <code>sale_name</code> variable can serve as an individual sale (so it includes the year of the sale, eg. <strong>feb_2010</strong>), while the <code>sale</code> variable will match across multiple years.</p>
+<p>Loading other libraries <code>dplyr</code> and <code>ggplot2</code> we can quickly analyse data:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)</code></pre>
+<p>The average price of lots in each sale across multiple years:</p>
+<pre class="sourceCode r"><code class="sourceCode r">sale_summaries &lt;-<span class="st"> </span>tattersalls %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(sale, year) %&gt;%
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(),
+              <span class="dt">mean =</span> <span class="kw">mean</span>(price, <span class="dt">na.rm=</span>T))
+
+<span class="kw">ggplot</span>(sale_summaries, <span class="kw">aes</span>(<span class="dt">x=</span>year, <span class="dt">y=</span>mean)) +
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;#D9220F&quot;</span>) +
+<span class="st">    </span><span class="kw">theme_bw</span>() +
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">10</span>)) +
+<span class="st">    </span><span class="kw">facet_wrap</span>(~sale)</code></pre>
+<p><img src="tattersalls_files/figure-html/unnamed-chunk-5.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="672" style="display: block; margin: auto;" /></p>
+<p>One thing stands out immediately from the plots above, don’t go to October Book 1 unless you have deep pockets, the average price of lots has doubled from 96,001 Guineas in 2010 to 188,068 Guineas in 2013 (2014 isn’t included in the <code>tatts_2014</code> dataset yet). The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be very consistent.</p>
+<p>We can also find the 20 sires with the highest average price over the 5 years:</p>
+<pre class="sourceCode r"><code class="sourceCode r">tattersalls %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(sire) %&gt;%
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(),
+              <span class="dt">mean =</span> <span class="kw">mean</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">sd =</span> <span class="kw">sd</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">min =</span> <span class="kw">min</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">max =</span> <span class="kw">max</span>(price, <span class="dt">na.rm=</span>T)) %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(n &gt;=<span class="st"> </span><span class="dv">50</span>) %&gt;%
+<span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(mean)) %&gt;%
+<span class="st">    </span><span class="kw">head</span>(<span class="dv">20</span>)</code></pre>
+<pre><code>## Source: local data frame [20 x 6]
+## 
+##                       sire   n      mean        sd   min     max
+## 1      sea the stars (ire) 102 212922.08 143772.55 16000  590000
+## 2            galileo (ire) 488 199765.30 407846.14   800 5000000
+## 3           danehill (usa)  50 126065.12 387885.12  2000 2400000
+## 4       new approach (ire) 182 105120.00 103159.38  2500  500000
+## 5     sadler&#39;s wells (usa) 140 104800.88 212350.10  1000 1700000
+## 6            montjeu (ire) 288 102570.64 150041.28   800  850000
+## 7             monsun (ger)  74  94640.68 114118.87  2000  600000
+## 8       fastnet rock (aus)  97  90364.86  86581.27  4000  540000
+## 9         oasis dream (gb) 501  83408.95 134195.03   800 1100000
+## 10            dansili (gb) 383  82450.00 190375.13   800 2700000
+## 11      raven&#39;s pass (usa) 110  81441.84 109440.36   800  800000
+## 12 invincible spirit (ire) 571  79318.65 131856.61   800 2100000
+## 13   danehill dancer (ire) 453  79052.05 232405.64   800 4000000
+## 14            dubawi (ire) 336  77525.18  98060.95   800  650000
+## 15    rip van winkle (ire) 100  72958.33  65901.54  4000  400000
+## 16            pivotal (gb) 534  71564.40 241596.80   800 4700000
+## 17              arch (usa)  77  66803.57  82477.20  2000  300000
+## 18           teofilo (ire) 353  61426.28  70607.26   800  600000
+## 19   elusive quality (usa) 163  60969.75  94181.60  1000  760000
+## 20      speightstown (usa)  57  59585.37  65556.26  2000  320000</code></pre>
+<p><strong>Sea The Stars</strong> is top of the list, his progeny costing a cool 212,922 Guineas on average, Galileo is a close second, with a large gap down to Danehill. Perhaps more interesting than Sea The Stars topping Galileo is the <em>standard deviation</em> of their prices, Sea The Stars with a much smaller <strong>sd</strong> perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren’t quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.</p>
+<p>It’s also possible to look at the buyers or agents with the highest average price paid over the 5years.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tattersalls %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(buyer) %&gt;%
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(),
+              <span class="dt">mean =</span> <span class="kw">mean</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">sd =</span> <span class="kw">sd</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">min =</span> <span class="kw">min</span>(price, <span class="dt">na.rm=</span>T),
+              <span class="dt">max =</span> <span class="kw">max</span>(price, <span class="dt">na.rm=</span>T)) %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(n &gt;=<span class="st"> </span><span class="dv">50</span>) %&gt;%
+<span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(mean)) %&gt;%
+<span class="st">    </span><span class="kw">head</span>(<span class="dv">20</span>)</code></pre>
+<pre><code>## Source: local data frame [20 x 6]
+## 
+##                            buyer   n      mean        sd   min     max
+## 1                   demi o&#39;byrne  50 344060.00 267094.37  6000 1300000
+## 2       john ferguson bloodstock 240 183129.17 273817.36 25000 4000000
+## 3        shadwell estate company 201 156452.74 131199.46 35000 1100000
+## 4     c gordon-watson bloodstock 229 142248.03 194525.93   800 1700000
+## 5       david redvers bloodstock 182 123344.51 231901.84  5000 2500000
+## 6           mccalmont bloodstock  50 120390.00 208791.74  6500 1150000
+## 7         john warren bloodstock  93 118645.16  95735.10 11000  600000
+## 8             cheveley park stud  56 112732.14  99345.04 32000  535000
+## 9                   dwayne woods  60  95391.67  78483.30  3000  450000
+## 10          blandford bloodstock 399  77259.65 102672.45   800  925000
+## 11     richard frisby bloodstock  79  77018.99  87915.26  2000  370000
+## 12     anthony stroud bloodstock 193  73031.09  70601.23   800  380000
+## 13 peter &amp; ross doyle bloodstock 330  65541.52  69462.18   800  800000
+## 14     stephen hillen bloodstock 160  64431.25 171809.90  3000 2100000
+## 15         hugo merry bloodstock 129  63468.22  90082.13  1700  675000
+## 16               sackvilledonald 170  63355.88  59811.45  2500  460000
+## 17               jeremy brummitt  55  60072.73  80168.54 10000  475000
+## 18  kern/lillingston association 116  54304.31  62116.30  3800  460000
+## 19                   bba ireland 529  53180.34 213431.73   800 4700000
+## 20        margaret o&#39;toole (ire) 119  45928.57  30997.76  5000  165000</code></pre>
+<p>Demi O’Byrne (an agent associated with Coolmore) isn’t as active as others in the top 5, with just 50 purchases, but the average price he pays is almost double that of John Ferguson (links with Godolphin).</p>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
