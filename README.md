@@ -3,6 +3,12 @@ rBloodstock 0.1.0
 
 R package with variety of datasets from Thoroughbred Bloodstock Sales, at the time of writing there are just 5 datasets of Tattersalls sales from 2010 to 2014 (incomplete)
 
+#### Installation
+Within R
+```R
+devtools::install_github(repo = "durtal/rBloodstock")
+```
+
 #### Datasets
 Only Tattersalls sales are in the package at the moment, hopefully others will be added in time (sales from Goffs etc.)
 
