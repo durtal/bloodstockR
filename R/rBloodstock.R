@@ -9,7 +9,7 @@
 #' 
 #' @section Datasets: 
 #' \itemize{
-#'      \item \link{tatts_2014} 1469 rows, made up of 5 individual sales (more 
+#'      \item \link{tatts_2014} 4064 rows, made up of 9 individual sales (more 
 #'      will be added)
 #'      \item \link{tatts_2013} 8280 rows, made up of 14 individual sales
 #'      \item \link{tatts_2012} 7225 rows, made up of 13 individual sales
@@ -55,15 +55,19 @@ NULL
 
 #' Tattersalls Sales in 2014
 #' 
-#' @description Dataset of 5 Tattersalls sales in 2014
+#' @description Dataset of 9 Tattersalls sales in 2014
 #' 
 #' @name tatts_2014
 #' @docType data
 #' @keywords dataset
-#' @format 1469 rows, 12 columns
+#' @format 4064 rows, 12 columns
 #' 
 #' @section tatts_2014:
 #' \itemize{
+#'      \item \strong{oct_bk3_2014} October Book 3 2014 Sale
+#'      \item \strong{oct_bk2_2014} October Book 2 2014 Sale
+#'      \item \strong{oct_bk1_2014} October Book 1 2014 Sale
+#'      \item \strong{sept_2014} September 2014 Sale
 #'      \item \strong{july_2014} July 2014 Sale
 #'      \item \strong{guineas_hit_2014} Guineas Horses in Training 2014 Sale
 #'      \item \strong{guineas_2014} Guineas 2014 Sale

@@ -13,12 +13,12 @@ A growing collection of Thoroughbred Horse sales datasets
 \section{Datasets}{
 
 \itemize{
-     \item \link{tatts_2014} 1469 rows, made up of 5 individual sales (more
+     \item \link{tatts_2014} 4064 rows, made up of 9 individual sales (more
      will be added)
      \item \link{tatts_2013} 8280 rows, made up of 14 individual sales
-     \item \link{tatts_2012} 7739 rows, made up of 14 individual sales
-     \item \link{tatts_2011} 7488 rows, made up of 13 individual sales
-     \item \link{tatts_2010} 8346 rows, made up of 13 individual sales
+     \item \link{tatts_2012} 7225 rows, made up of 13 individual sales
+     \item \link{tatts_2011} 6946 rows, made up of 12 individual sales
+     \item \link{tatts_2010} 7796 rows, made up of 12 individual sales
 }
 }
 

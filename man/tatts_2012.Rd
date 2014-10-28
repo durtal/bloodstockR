@@ -3,9 +3,9 @@
 \name{tatts_2012}
 \alias{tatts_2012}
 \title{Tattersalls Sales in 2012}
-\format{7739 rows, 12 columns}
+\format{7225 rows, 12 columns}
 \description{
-Dataset of 14 Tattersalls sales in 2012
+Dataset of 13 Tattersalls sales in 2012
 }
 \section{Sales}{
 
@@ -18,7 +18,6 @@ Dataset of 14 Tattersalls sales in 2012
      \item \strong{oct_bk3_2012} October Book 3 2012 Sale
      \item \strong{oct_bk2_2012} October Book 2 2012 Sale
      \item \strong{oct_bk1_2012} October Book 1 2012 Sale
-     \item \strong{sept_2012} September 2012 Sale
      \item \strong{july_2012} July 2012 Sale
      \item \strong{guineas_hit_2012} Guineas Horses in Training 2012 Sale
      \item \strong{guineas_2012} Guineas 2012 Sale
