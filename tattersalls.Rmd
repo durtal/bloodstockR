@@ -5,7 +5,7 @@ title: "Tattersalls"
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(rBloodstock)
 ```
-There are currently (as of 22/10/14) 5 datasets with Tattersalls sales data, these are:
+There are currently (as of 30/10/14) 5 datasets with Tattersalls sales data, these are:
 
 Name | Sales included | Dim
 -----|----------------|-----
@@ -13,7 +13,7 @@ tatts_2010 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat
 tatts_2011 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, breeze_up, craven, feb</sub> | 7488 rows, 12 cols
 tatts_2012 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 7739 rows, 12 cols
 tatts_2013 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 8867 rows, 12 cols
-tatts_2014 | <sub>sept, july, guineas_hit, guineas, craven, feb</sub> | 2174 rows, 12 cols
+tatts_2014 | <sub>oct_bk1, oct_bk2, oct_bk3, sept, july, guineas_hit, guineas, craven, feb</sub> | 4064 rows, 12 cols
 
 There is a function to collect data from sales not included in the package, see [here](collect_tatts_sales.html).
 
@@ -46,7 +46,7 @@ library(ggplot2)
 
 The average price of lots in each sale across multiple years:
 
-```{r fig.align='center', fig.height=5, fig.width=7}
+```{r fig.align='center', fig.height=5, fig.width=9}
 sale_summaries <- tattersalls %>%
     group_by(sale, year) %>%
     summarise(n = n(),
