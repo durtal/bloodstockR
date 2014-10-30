@@ -212,7 +212,7 @@ tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_20
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">text =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">10</span>)) +
 <span class="st">    </span><span class="kw">facet_wrap</span>(~sale)</code></pre>
 <p><img src="tattersalls_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" width="864" style="display: block; margin: auto;" /></p>
-<p>One thing stands out immediately from the plots above, don’t go to October Book 1 unless you have deep pockets, the average price of lots has doubled from 96,001 Guineas in 2010 to 188,068 Guineas in 2013 (2014 isn’t included in the <code>tatts_2014</code> dataset yet). The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be very consistent.</p>
+<p>One thing stands out immediately from the plots above, don’t go to October Book 1 unless you have deep pockets, the average price paid has more than doubled from 96,001 Guineas in 2010 to 212,637 Guineas in 2014. October Book 2 has also (unsurprisingly) seen a small increase in average price paid over the same period. The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be quite consistent.</p>
 <p>We can also find the 20 sires with the highest average price over the 5 years:</p>
 <pre class="sourceCode r"><code class="sourceCode r">tattersalls %&gt;%
 <span class="st">    </span><span class="kw">group_by</span>(sire) %&gt;%
@@ -247,7 +247,7 @@ tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_20
 ## 18         shamardal (usa) 446  70400.29 120847.71   800 1700000
 ## 19    rip van winkle (ire) 133  69230.43  62506.29  4000  400000
 ## 20              arch (usa)  80  67898.31  82438.42  2000  300000</code></pre>
-<p><strong>Sea The Stars</strong> is top of the list, his progeny costing a cool 212,922 Guineas on average, Galileo is a close second, with a large gap down to Danehill. Perhaps more interesting than Sea The Stars topping Galileo is the <em>standard deviation</em> of their prices, Sea The Stars with a much smaller <strong>sd</strong> perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren’t quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.</p>
+<p><strong>Sea The Stars</strong> is top of the list, his progeny costing a cool 224,100 Guineas on average, Galileo is a very close second, with a large drop down, of almost 100,000 Guineas, to Danehill. Perhaps more interesting than Sea The Stars topping Galileo is the <em>standard deviation</em> of their prices, Sea The Stars with a much smaller <strong>sd</strong> perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren’t quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.</p>
 <p>It’s also possible to look at the buyers or agents with the highest average price paid over the 5years.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tattersalls %&gt;%
 <span class="st">    </span><span class="kw">group_by</span>(buyer) %&gt;%

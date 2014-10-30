@@ -59,7 +59,7 @@ ggplot(sale_summaries, aes(x=year, y=mean)) +
     facet_wrap(~sale)
 ```
 
-One thing stands out immediately from the plots above, don't go to October Book 1 unless you have deep pockets, the average price of lots has doubled from 96,001 Guineas in 2010 to 188,068 Guineas in 2013 (2014 isn't included in the `tatts_2014` dataset yet).  The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be very consistent.
+One thing stands out immediately from the plots above, don't go to October Book 1 unless you have deep pockets, the average price paid has more than doubled from 96,001 Guineas in 2010 to 212,637 Guineas in 2014.  October Book 2 has also (unsurprisingly) seen a small increase in average price paid over the same period.  The Craven sale has also seen a small increase over recent years, but prices are in other sales appear to be quite consistent.
 
 We can also find the 20 sires with the highest average price over the 5 years:
 
@@ -76,7 +76,7 @@ tattersalls %>%
     head(20)
 ```
 
-**Sea The Stars** is top of the list, his progeny costing a cool 212,922 Guineas on average, Galileo is a close second, with a large gap down to Danehill.  Perhaps more interesting than Sea The Stars topping Galileo is the *standard deviation* of their prices, Sea The Stars with a much smaller **sd** perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren't quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.
+**Sea The Stars** is top of the list, his progeny costing a cool 224,100 Guineas on average, Galileo is a very close second, with a large drop down, of almost 100,000 Guineas, to Danehill.  Perhaps more interesting than Sea The Stars topping Galileo is the *standard deviation* of their prices, Sea The Stars with a much smaller **sd** perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren't quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.
 
 It's also possible to look at the buyers or agents with the highest average price paid over the 5years.
 ```{r}
