@@ -146,7 +146,7 @@ code > span.er { color: #c3bf9f; }
 </div>
 
 
-<p>There are currently (as of 30/10/14) 5 datasets with Tattersalls sales data, these are:</p>
+<p>There are currently (as of 2014-11-24) 5 datasets with Tattersalls sales data, these are:</p>
 <table>
 <thead>
 <tr class="header">
@@ -158,28 +158,28 @@ code > span.er { color: #c3bf9f; }
 <tbody>
 <tr class="odd">
 <td align="left">tatts_2010</td>
-<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas, craven, feb</sub></td>
-<td align="left">8346 rows, 12 cols</td>
+<td align="left"><sub>feb, craven, guineas, july, oct_bk1, oct_bk2, oct_bk3, autumn_hit, breeders_flat, dec_yearlings, dec_foals, dec_mares</sub></td>
+<td align="left">7796 rows, 12 cols</td>
 </tr>
 <tr class="even">
 <td align="left">tatts_2011</td>
-<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, breeze_up, craven, feb</sub></td>
-<td align="left">7488 rows, 12 cols</td>
+<td align="left"><sub>feb, craven, breeze_up, july, oct_bk1, oct_bk2, oct_bk3, autumn_hit, breeders_flat, dec_yearlings, dec_foals, dec_mares</sub></td>
+<td align="left">6946 rows, 12 cols</td>
 </tr>
 <tr class="odd">
 <td align="left">tatts_2012</td>
-<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub></td>
-<td align="left">7739 rows, 12 cols</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">7101 rows, 12 cols</td>
 </tr>
 <tr class="even">
 <td align="left">tatts_2013</td>
-<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub></td>
-<td align="left">8867 rows, 12 cols</td>
+<td align="left"><sub>feb, craven, guineas, guineas_hit, july, oct_bk1, oct_bk2, oct_bk3, oct_bk4, autumn_hit, dec_yearlings, dec_foals, dec_mares</sub></td>
+<td align="left">7192 rows, 12 cols</td>
 </tr>
 <tr class="odd">
 <td align="left">tatts_2014</td>
-<td align="left"><sub>oct_bk1, oct_bk2, oct_bk3, sept, july, guineas_hit, guineas, craven, feb</sub></td>
-<td align="left">4064 rows, 12 cols</td>
+<td align="left"><sub>july, guineas, guineas_hit, craven, feb, oct_bk1, oct_bk2, oct_bk3</sub></td>
+<td align="left">3359 rows, 12 cols</td>
 </tr>
 </tbody>
 </table>
@@ -196,7 +196,7 @@ code > span.er { color: #c3bf9f; }
 tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
 <span class="co"># clean workspace</span>
 <span class="kw">rm</span>(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)</code></pre>
-<p>The new <code>tattersalls</code> dataset has 34311 rows and 12 columns, the <code>sale_name</code> variable can serve as an individual sale (so it includes the year of the sale, eg. <strong>feb_2010</strong>), while the <code>sale</code> variable will match across multiple years.</p>
+<p>The new <code>tattersalls</code> dataset has 32394 rows and 12 columns, the <code>sale_name</code> variable can serve as an individual sale (so it includes the year of the sale, eg. <strong>feb_2010</strong>), while the <code>sale</code> variable will match across multiple years.</p>
 <p>Loading other libraries <code>dplyr</code> and <code>ggplot2</code> we can quickly analyse data:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(ggplot2)</code></pre>
@@ -227,26 +227,26 @@ tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_20
 <pre><code>## Source: local data frame [20 x 6]
 ## 
 ##                       sire   n      mean        sd   min     max
-## 1      sea the stars (ire) 140 224100.92 153564.74 16000  650000
-## 2            galileo (ire) 517 221113.08 422710.12   800 5000000
-## 3           danehill (usa)  50 126065.12 387885.12  2000 2400000
-## 4       new approach (ire) 213 115085.23 112242.00  2500  600000
-## 5            montjeu (ire) 295 109844.84 160582.97   800  850000
-## 6     sadler&#39;s wells (usa) 140 104800.88 212350.10  1000 1700000
-## 7             dubawi (ire) 349  99800.00 172610.52   800 1600000
-## 8             monsun (ger)  75  96396.67 113962.25  2000  600000
-## 9         oasis dream (gb) 529  95668.03 146239.91   800 1100000
-## 10      fastnet rock (aus) 141  90769.91  84839.98  4000  540000
-## 11            dansili (gb) 394  86534.67 191951.69   800 2700000
-## 12 invincible spirit (ire) 599  82369.38 132773.44   800 2100000
-## 13   danehill dancer (ire) 468  80064.41 229364.46   800 4000000
-## 14      raven&#39;s pass (usa) 130  78780.34 101886.66   800  800000
-## 15            pivotal (gb) 562  74053.33 236658.18   800 4700000
-## 16       dream ahead (usa)  57  73340.00  77357.27  3000  400000
-## 17       poet&#39;s voice (gb)  77  73014.49  90171.49  3500  525000
-## 18         shamardal (usa) 446  70400.29 120847.71   800 1700000
-## 19    rip van winkle (ire) 133  69230.43  62506.29  4000  400000
-## 20              arch (usa)  80  67898.31  82438.42  2000  300000</code></pre>
+## 1            galileo (ire) 468 232839.89 437553.44   800 5000000
+## 2      sea the stars (ire) 135 228273.58 153669.31 16000  650000
+## 3       new approach (ire) 198 118050.60 113471.13  2500  600000
+## 4            montjeu (ire) 257 116878.68 165270.79   800  850000
+## 5     sadler&#39;s wells (usa) 128 110720.59 222354.19  1000 1700000
+## 6             dubawi (ire) 319 104496.25 177682.27   800 1600000
+## 7         oasis dream (gb) 449 104113.61 154020.86   800 1100000
+## 8       fastnet rock (aus) 124  94277.23  87510.47  4000  540000
+## 9             monsun (ger)  63  89016.00  94988.28  2000  400000
+## 10      raven&#39;s pass (usa) 116  84393.20 106863.52  3000  800000
+## 11 invincible spirit (ire) 519  81189.90  94453.87   800  680000
+## 12   danehill dancer (ire) 413  81165.06 238670.67   800 4000000
+## 13            dansili (gb) 321  80624.90 124738.21   800 1200000
+## 14        street cry (ire)  89  75665.08 142388.11  1000 1000000
+## 15      lope de vega (ire)  66  75203.39 104064.43  1000  650000
+## 16         shamardal (usa) 398  75127.16 125686.99   800 1700000
+## 17       dream ahead (usa)  56  74530.61  77694.68  3000  400000
+## 18       poet&#39;s voice (gb)  76  73397.06  90785.48  3500  525000
+## 19              arch (usa)  69  71660.00  85244.99  2000  300000
+## 20    rip van winkle (ire) 107  70181.32  64477.58  4000  400000</code></pre>
 <p><strong>Sea The Stars</strong> is top of the list, his progeny costing a cool 224,100 Guineas on average, Galileo is a very close second, with a large drop down, of almost 100,000 Guineas, to Danehill. Perhaps more interesting than Sea The Stars topping Galileo is the <em>standard deviation</em> of their prices, Sea The Stars with a much smaller <strong>sd</strong> perhaps suggests buyers believe his progeny will prove to be successful (see Taghrooda), but are still showing some restraint and aren’t quite willing to part with the big sums seen with Galileo, whose most expensive sale fetched 9 times the most expensive Sea The Stars sale.</p>
 <p>It’s also possible to look at the buyers or agents with the highest average price paid over the 5years.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tattersalls %&gt;%
@@ -263,25 +263,25 @@ tattersalls &lt;-<span class="st"> </span><span class="kw">rbind</span>(tatts_20
 ## 
 ##                            buyer   n      mean        sd   min     max
 ## 1                   demi o&#39;byrne  50 344060.00 267094.37  6000 1300000
-## 2       john ferguson bloodstock 291 217340.21 305347.10 25000 4000000
-## 3            j warren bloodstock  92 163744.57 144386.32 16500  680000
-## 4        shadwell estate company 250 163488.00 130553.20 35000 1100000
-## 5     c gordon-watson bloodstock 270 149084.44 190080.48   800 1700000
-## 6           mccalmont bloodstock  51 130774.51 219594.75  6500 1150000
-## 7             cheveley park stud  61 122098.36 104013.89 32000  535000
-## 8       david redvers bloodstock 197 121993.40 225457.93  5000 2500000
-## 9         john warren bloodstock  93 118645.16  95735.10 11000  600000
-## 10                  dwayne woods  60  95391.67  78483.30  3000  450000
-## 11          blandford bloodstock 430  79854.88 103871.98   800  925000
-## 12             mrs a skiffington  57  79289.47  78058.53  3000  400000
-## 13     richard frisby bloodstock  86  74308.14  84808.23  2000  370000
-## 14 peter &amp; ross doyle bloodstock 388  72782.73  77984.78   800  800000
-## 15     anthony stroud bloodstock 212  71264.15  68030.93   800  380000
-## 16     brian grassick bloodstock  50  67214.00  62857.31  2200  360000
-## 17     stephen hillen bloodstock 173  66624.28 166552.07  3000 2100000
-## 18         hugo merry bloodstock 142  66446.48  88738.11  1700  675000
-## 19               jeremy brummitt  64  64257.81  79608.57  6500  475000
-## 20               sackvilledonald 220  61468.18  55066.49  2500  460000</code></pre>
+## 2       john ferguson bloodstock 289 217788.93 306356.89 25000 4000000
+## 3            j warren bloodstock  83 175728.92 147062.25 16500  680000
+## 4        shadwell estate company 223 171502.24 135652.44 35000 1100000
+## 5     c gordon-watson bloodstock 255 152979.61 194525.69   800 1700000
+## 6       david redvers bloodstock 187 124661.50 231037.29  5000 2500000
+## 7         john warren bloodstock  93 118645.16  95735.10 11000  600000
+## 8                   dwayne woods  59  95652.54  79130.74  3000  450000
+## 9           blandford bloodstock 415  81112.29 105464.53   800  925000
+## 10             mrs a skiffington  54  80138.89  79756.61  3000  400000
+## 11     richard frisby bloodstock  83  75716.87  86007.98  2000  370000
+## 12     anthony stroud bloodstock 200  71845.00  69454.76   800  380000
+## 13 peter &amp; ross doyle bloodstock 340  71655.00  80123.82   800  800000
+## 14               jeremy brummitt  54  69175.93  85540.96  6500  475000
+## 15     stephen hillen bloodstock 160  66943.75 172907.06  3000 2100000
+## 16         hugo merry bloodstock 138  65771.01  89668.89  1700  675000
+## 17               sackvilledonald 180  65169.44  59202.64  2500  460000
+## 18  kern/lillingston association 125  56936.00  70994.03  3800  460000
+## 19                   bba ireland 539  55816.14 212148.72   800 4700000
+## 20             rabbah bloodstock 392  47691.33  42346.02  5000  500000</code></pre>
 <p>Demi O’Byrne (an agent associated with Coolmore) isn’t as active as others in the top 5, with just 50 purchases, but the average price he pays is almost double that of John Ferguson (links with Godolphin).</p>
 </div>
 

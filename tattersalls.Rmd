@@ -4,16 +4,17 @@ title: "Tattersalls"
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(rBloodstock)
+data(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
 ```
-There are currently (as of 30/10/14) 5 datasets with Tattersalls sales data, these are:
+There are currently (as of `r Sys.Date()`) 5 datasets with Tattersalls sales data, these are:
 
 Name | Sales included | Dim
 -----|----------------|-----
-tatts_2010 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas, craven, feb</sub> | 8346 rows, 12 cols
-tatts_2011 | <sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, sept, july, breeze_up, craven, feb</sub> | 7488 rows, 12 cols
-tatts_2012 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 7739 rows, 12 cols
-tatts_2013 | <sub>dec_mares, dec_foals, dec_yearlings, nov_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, sept, july, guineas_hit, guineas, craven, feb</sub> | 8867 rows, 12 cols
-tatts_2014 | <sub>oct_bk1, oct_bk2, oct_bk3, sept, july, guineas_hit, guineas, craven, feb</sub> | 4064 rows, 12 cols
+tatts_2010 | <sub>`r paste(unique(tatts_2010$sale), collapse = ", ")`</sub> | `r dim(tatts_2010)[1]` rows, 12 cols
+tatts_2011 | <sub>`r paste(unique(tatts_2011$sale), collapse = ", ")`</sub> | `r dim(tatts_2011)[1]` rows, 12 cols
+tatts_2012 | <sub>`r paste(unique(tatts_2012$sale), collapse = ", ")`</sub> | `r dim(tatts_2012)[1]` rows, 12 cols
+tatts_2013 | <sub>`r paste(unique(tatts_2013$sale), collapse = ", ")`</sub> | `r dim(tatts_2013)[1]` rows, 12 cols
+tatts_2014 | <sub>`r paste(unique(tatts_2014$sale), collapse = ", ")`</sub> | `r dim(tatts_2014)[1]` rows, 12 cols
 
 There is a function to collect data from sales not included in the package, see [here](collect_tatts_sales.html).
 
