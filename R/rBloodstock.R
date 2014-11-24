@@ -11,7 +11,7 @@
 #' \itemize{
 #'      \item \link{tatts_2014} 4064 rows, made up of 9 individual sales (more 
 #'      will be added)
-#'      \item \link{tatts_2013} 8280 rows, made up of 14 individual sales
+#'      \item \link{tatts_2013} 7192 rows, made up of 13 individual sales
 #'      \item \link{tatts_2012} 7225 rows, made up of 13 individual sales
 #'      \item \link{tatts_2011} 6946 rows, made up of 12 individual sales
 #'      \item \link{tatts_2010} 7796 rows, made up of 12 individual sales
@@ -84,14 +84,13 @@ NULL
 #' @name tatts_2013
 #' @docType data
 #' @keywords dataset
-#' @format 8280 rows, 12 columns
+#' @format 7192 rows, 12 columns
 #'
 #' @section Sales:
 #' \itemize{
 #'      \item \strong{dec_mares_2013} December Mares 2013 Sale
 #'      \item \strong{dec_foals_2013} December Foals 2013 Sale
 #'      \item \strong{dec_yearlings_2013} December Yearlings 2013 Sale
-#'      \item \strong{nov_yearlings_2013} November Yearlings 2013 Sale
 #'      \item \strong{autumn_hit_2013} Autumn Horses in Training 2013 Sale
 #'      \item \strong{oct_bk4_2013} October Book 4 2013 Sale
 #'      \item \strong{oct_bk3_2013} October Book 3 2013 Sale
