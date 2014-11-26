@@ -50,6 +50,16 @@ collect_tatts_sales <- function(url, sale_name = "NULL") {
     comp_df <- cbind(sale_name, lot_no, ped_df, seller_df, price)
     comp_df$lot_no <- as.character(lot_no)
     comp_df$sale_name <- as.character(sale_name)
+    
+    # further cleaning of dam and sire variables, which sometimes scrape horse, sex and colour
+    regx <- "([[:alpha:]]+/)?([[:alpha:]]+\\.)+"
+    comp_df$dam <- gsub(pattern = regx, replacement = "", comp_df$dam)
+    comp_df$dam <- stringr::str_trim(comp_df$dam, side = "both")
+    hregx <- "(([[:alpha:]]*)([[:punct:]]|\\s)?)*\\s\\([[:alpha:]]{2,3}\\)\\s"
+    comp_df$sire <- gsub(pattern = hregx, "", comp_df$sire)
+    comp_df$sire <- gsub(regx, "", comp_df$sire)
+    comp_df$sire <- stringr::str_trim(comp_df$sire, side = "both")
+    
     return(comp_df)
 }
 
