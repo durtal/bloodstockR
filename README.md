@@ -1,4 +1,4 @@
-rBloodstock 0.1.0
+rBloodstock 1.0.0
 =================
 
 R package with variety of datasets from Thoroughbred Bloodstock Sales, at the time of writing there are 6 datasets of Tattersalls sales from 2010 to 2015 (incomplete)

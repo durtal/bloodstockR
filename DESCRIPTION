@@ -1,7 +1,7 @@
 Package: rBloodstock
 Type: Package
 Title: Collection of thoroughbred horse sales datasets
-Version: 0.1.0
+Version: 1.0.0
 Date: 2014-10-16
 Author: Thomas Heslop
 Maintainer: Thomas Heslop <t_heslop@hotmail.co.uk>
