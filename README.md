@@ -37,13 +37,13 @@ tattersalls <- rbind(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014,
 rm(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014, tatts_2015)
 
 # load dplyr and ggplot
-tattersalls %>% 
-    filter(grepl("sea the stars", sire)) %>% 
-    group_by(year) %>% 
-    ggplot(aes(x = factor(year), y = price)) + 
-        geom_boxplot(fill = "#d9220f") + 
+tattersalls %>%
+    filter(grepl("sea the stars", sire)) %>%
+    group_by(year) %>%
+    ggplot(aes(x = factor(year), y = price)) +
+        geom_boxplot(fill = "#d9220f") +
         RcappeR::theme_rcapper() + # my other package for a nice theme :-)
         labs(x = "Year", title = "Sea The Stars progeny @ Tattersalls")
 ```
 
-![][SeaTheStars.jpeg]
+![](SeaTheStars.jpeg)
