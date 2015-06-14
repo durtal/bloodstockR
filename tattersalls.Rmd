@@ -4,9 +4,9 @@ title: "Tattersalls"
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(rBloodstock)
-data(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014)
+data(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014, tatts_2015)
 ```
-There are currently (as of `r Sys.Date()`) 5 datasets with Tattersalls sales data, these are:
+There are currently (as of `r Sys.Date()`) 6 datasets with Tattersalls sales data, these are:
 
 Name | Sales included | Dim
 -----|----------------|-----
@@ -15,6 +15,7 @@ tatts_2011 | <sub>`r paste(unique(tatts_2011$sale), collapse = ", ")`</sub> | `r
 tatts_2012 | <sub>`r paste(unique(tatts_2012$sale), collapse = ", ")`</sub> | `r dim(tatts_2012)[1]` rows, 12 cols
 tatts_2013 | <sub>`r paste(unique(tatts_2013$sale), collapse = ", ")`</sub> | `r dim(tatts_2013)[1]` rows, 12 cols
 tatts_2014 | <sub>`r paste(unique(tatts_2014$sale), collapse = ", ")`</sub> | `r dim(tatts_2014)[1]` rows, 12 cols
+tatts_2015 | <sub>`r paste(unique(tatts_2015$sale), collapse = ", ")`</sub> | `r dim(tatts_2015)[1]` rows, 12 cols
 
 There is a function to collect data from sales not included in the package, see [here](collect_tatts_sales.html).
 

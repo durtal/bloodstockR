@@ -12,4 +12,4 @@ library(rBloodstock)
 
 ### Datasets
 
-At the moment only data from Tattersalls sales in 2010 through 2014 (up to mid October, so not including October sales).  For more on these datasets see [**Tattersalls**](tattersalls.html).
+At the moment only data from Tattersalls sales in 2010 through 2014 and a few of the sales from 2015.  For more on these datasets see [**Tattersalls**](tattersalls.html).
