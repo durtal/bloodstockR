@@ -14,7 +14,7 @@ A growing collection of Thoroughbred Horse sales datasets
 \section{Datasets}{
 
 \itemize{
-     \item \link{tatts_2015} 1537 rows, consisting of four sales (more will be
+     \item \link{tatts_2015} 2965 rows, consisting of 7 sales (more will be
      added)
      \item \link{tatts_2014} 7429 rows, made up of 13 individual sales
      \item \link{tatts_2013} 7192 rows, made up of 13 individual sales
