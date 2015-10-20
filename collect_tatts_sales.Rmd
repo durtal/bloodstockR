@@ -1,0 +1,25 @@
+---
+title: "collect_tatts_sales"
+---
+
+The 5 Tattersalls datasets might not contain data for the sale you would like, so I have included a function to collect new data from the [Tattersalls](http://db.tattersalls.com/4DCGI/Entry/Index) site.  The function is a little crude, but the format of data appears to be in the same format for each sale, so hopefully it will work as desired (if you encounter issues let me know).  Sales can be chosen from the dropdown menu [on this page](http://db.tattersalls.com/4DCGI/Entry/MenuResults).
+
+#### Usage
+```{r, eval=FALSE}
+collect_tatts_sales(url, sale_name = "")
+```
+
+#### Arguments
+
+param | details
+------|-------
+url | the url of the sale
+sale_name | optional, name of the sale, useful to include if combining with other datasets
+
+#### Example Use
+Collect data for "October 2003 Book 1", the url *"http://db.tattersalls.com/4DCGI/Entry/List?30%096%09=%20OC1%2003%09by8"*
+
+```{r, eval=FALSE}
+oct_bk1 <- collect_tatts_sales(url = "http://db.tattersalls.com/4DCGI/Entry/List?30%096%09=%20OC1%2003%09by8",
+                               sale_name = "oct_bk1")
+```

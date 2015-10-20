@@ -1,0 +1,15 @@
+---
+title: "rBloodstock"
+---
+
+These are the help pages for the R package **rBloodstock**, which currently contains datasets containing data about Tattersalls sales.  Hopefully over time the number of datasets will increase, and will include other Thoroughbred Sales (such as Goffs, etc).  The package is hosted on github, you can find it [here](https://www.github.com/durtal/rBloodstock).
+
+To install and load the package (devtools must be installed first):
+```{r, eval=FALSE}
+devtools::install_github(repo = "durtal/rBloodstock")
+library(rBloodstock)
+```
+
+### Datasets
+
+At the moment only data from Tattersalls sales in 2010 through 2014 and a few of the sales from 2015.  For more on these datasets see [**Tattersalls**](tattersalls.html).
