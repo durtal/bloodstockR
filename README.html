@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title></title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.1/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+@media (min-width: 980px) {
+  .section h2 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+  .section h3 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+}
+
+p{
+  font-size: 13px;
+}
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+/* some padding for disqus */
+#disqus_thread {
+  margin-top: 45px;
+}
+
+</style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+<h1>rBloodstock</h1>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="https://github.com/durtal">durtal@github</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li class="dropdown">
+					<a href="Datasets" class="dropdown-toggle" data-toggle="dropdown">
+						Datasets <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="tattersalls.html">Tattersalls</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="functions" class="dropdown-toggle" data-toggle="dropdown">
+						Functions <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="collect_tatts_sales.html">collect_tatts_sales</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+<div id="rbloodstock-1.0.0" class="section level1">
+<h1>rBloodstock 1.0.0</h1>
+<p>R package with variety of datasets from Thoroughbred Bloodstock Sales, at the time of writing there are 6 datasets of Tattersalls sales from 2010 to 2015 (incomplete)</p>
+<div id="installation" class="section level4">
+<h4>Installation</h4>
+<p>Within R</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="dt">repo =</span> <span class="st">&quot;durtal/rBloodstock&quot;</span>)</code></pre>
+</div>
+<div id="datasets" class="section level4">
+<h4>Datasets</h4>
+<p>Only Tattersalls sales are in the package at the moment, hopefully others will be added in time (sales from Goffs etc.)</p>
+<div id="tattersalls-sales" class="section level5">
+<h5>Tattersalls sales</h5>
+<p>Data was sourced from <a href="http://db.tattersalls.com/4DCGI/Entry/Index">Tattersalls</a></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Sales included</th>
+<th align="left">Dim</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tatts_2010</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, july, guineas, craven, feb</sub></td>
+<td align="left">7796 rows, 12 cols</td>
+</tr>
+<tr class="even">
+<td align="left">tatts_2011</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, breeders_flat, oct_bk3, oct_bk2, oct_bk1, july, breeze_up, craven, feb</sub></td>
+<td align="left">6946 rows, 12 cols</td>
+</tr>
+<tr class="odd">
+<td align="left">tatts_2012</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, oct_bk3, oct_bk2, oct_bk1, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">7101 rows, 12 cols</td>
+</tr>
+<tr class="even">
+<td align="left">tatts_2013</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">7192 rows, 12 cols</td>
+</tr>
+<tr class="odd">
+<td align="left">tatts_2014</td>
+<td align="left"><sub>dec_mares, dec_foals, dec_yearlings, autumn_hit, oct_bk4, oct_bk3, oct_bk2, oct_bk1, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">7429 rows, 12 cols</td>
+</tr>
+<tr class="even">
+<td align="left">tatts_2015</td>
+<td align="left"><sub>oct_bk2, oct_bk1, july, guineas_hit, guineas, craven, feb</sub></td>
+<td align="left">2965 rows, 12 cols</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>collect_tatts_sales</code> function will collect data from a sale that is perhaps not included in the package datasets. The format Tattersalls presents data appears to be consistent across all sales, however no guarantees are made this function will perform as desired, if you discover an issue let me know.</p>
+</div>
+<div id="example" class="section level5">
+<h5>Example</h5>
+<pre><code># load library
+library(rBloodstock)
+# load datasets, combine, and then remove individual datasets
+data(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014, tatts_2015)
+tattersalls &lt;- rbind(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014, tatts_2015)
+rm(tatts_2010, tatts_2011, tatts_2012, tatts_2013, tatts_2014, tatts_2015)
+
+# load dplyr and ggplot
+tattersalls %&gt;%
+    filter(grepl(&quot;sea the stars&quot;, sire)) %&gt;%
+    group_by(year) %&gt;%
+    ggplot(aes(x = factor(year), y = price)) +
+        geom_boxplot(fill = &quot;#d9220f&quot;) +
+        RcappeR::theme_rcapper() + # my other package for a nice theme :-)
+        labs(x = &quot;Year&quot;, title = &quot;Sea The Stars progeny @ Tattersalls&quot;)</code></pre>
+<p><img src="SeaTheStars.jpeg" /></p>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
