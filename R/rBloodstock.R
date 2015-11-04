@@ -9,7 +9,7 @@
 #' 
 #' @section Datasets: 
 #' \itemize{
-#'      \item \link{tatts_2015} 3646 rows, consisting of 7 sales (more will be 
+#'      \item \link{tatts_2015} 5389 rows, consisting of 9 sales (more will be 
 #'      added)
 #'      \item \link{tatts_2014} 7429 rows, made up of 13 individual sales
 #'      \item \link{tatts_2013} 7192 rows, made up of 13 individual sales
@@ -60,13 +60,15 @@ NULL
 #' @name tatts_2015
 #' @docType data
 #' @keywords dataset
-#' @format 3646 rows, 12 columns
+#' @format 5389 rows, 12 columns
 #' 
 #' @section tatts_2015:
 #' \itemize{
-#'      \item oct_bk3 October Book 3 2015 Sale
-#'      \item oct_bk2 October Book 2 2015 Sale
-#'      \item oct_bk1 October Book 1 2015 Sale
+#'      \item autumn_hit Autumn Horses in Training Sale
+#'      \item oct_bk4_2015 October Book 4 2015 Sale
+#'      \item oct_bk3_2015 October Book 3 2015 Sale
+#'      \item oct_bk2_2015 October Book 2 2015 Sale
+#'      \item oct_bk1_2015 October Book 1 2015 Sale
 #'      \item july_2015 July 2015 sale
 #'      \item guineas_hit_2015 Guineas Horses in Training 2015 Sale
 #'      \item guineas_2015 Guineas 2015 Sale
