@@ -1,4 +1,4 @@
-Package: rBloodstock
+Package: bloodstockR
 Type: Package
 Title: Collection of thoroughbred horse sales datasets
 Version: 1.0.0
