@@ -6,8 +6,8 @@ These are the help pages for the R package **bloodstockR**, which currently cont
 
 To install and load the package (devtools must be installed first):
 ```{r, eval=FALSE}
-devtools::install_github(repo = "durtal/rBloodstock")
-library(rBloodstock)
+devtools::install_github(repo = "durtal/bloodstockR")
+library(bloodstockR)
 ```
 
 ### Datasets
