@@ -1,7 +1,9 @@
 bloodstockR 1.0.0
 =================
 
-R package with variety of datasets from Thoroughbred Bloodstock Sales, at the time of writing there are 6 datasets of Tattersalls sales from 2010 to 2015 (incomplete)
+R package with variety of datasets from Thoroughbred Bloodstock Sales, at the time of writing there are 6 datasets of Tattersalls sales from 2010 to 2015 (incomplete).
+
+I recommend checking out the [pinhooker](https://github.com/phillc73/pinhooker) R package which is along similar lines but contains a lot more data from other sales, and appears to be updated with more regularity.
 
 #### Installation
 Within R
